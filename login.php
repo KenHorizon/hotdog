@@ -16,8 +16,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		// it will immediately set a warning
 		if (empty($username)) { 
 			$notice = "Please Insert Username!";
+			$username = "";
+			$password = "";
 		} elseif (empty($password)) {
 			$notice = "Please Insert Password!";
+			$username = "";
+			$password = "";
 		} else {
 			if (!$user->isEmpty()) {
 				$user->register = $username;
@@ -30,10 +34,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 						// Redirect after user to home
 					} else {
 						$notice = "Incorrect Email/Password!";
+						$username = "";
+						$password = "";
 					}
 				}
 			} else {
 				$notice = "Incorrect Email/Password!";
+				$username = "";
+				$password = "";
 			}
 		}
 	} else {
