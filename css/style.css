@@ -1,0 +1,173 @@
+body {
+    background-color: rgb(197, 197, 197);
+    overflow: auto;
+}
+a:link  {
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+}
+a:active {
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+}
+a:visited {
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+}
+.wrapper {
+    overflow: auto;
+}
+
+.header {
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    background-color: gray;
+    text-align: center;
+    font-size: 64px;
+    color: white;
+}
+.text {
+    font-size: 16px;
+    color: white;
+}
+
+.center {
+    display: inline-grid;
+    vertical-align: baseline;
+    align-items: center;
+    justify-items: center;
+}
+.wrapper .text {
+    padding: 5px;
+}
+
+.forms_lang_select {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 5px;
+    border: 1px solid rgb(33, 21, 61);
+    background-color: rgb(41, 42, 73);
+    border-radius: 10px;
+    padding: 10px;
+}
+table {
+    border-collapse:separate;
+    border:solid rgb(37, 37, 49) 3px;
+	box-shadow: 0 5px 25px 1px rgb(30, 29, 34);
+    border-radius:6px;
+	width: 100%;
+    background-color: rgb(65, 65, 92);
+}
+
+td, th {
+	padding: 10px;
+    border-left:solid black 1px;
+    border-top:solid black 1px;
+}
+
+th {
+    border-top: none;
+}
+
+td:first-child, th:first-child {
+     border-left: none;
+}
+.forms_ctn {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.small_font {
+    font-variant: small-caps;
+    font-size: 20px;
+    vertical-align: baseline;
+}
+.ctn {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 550px;
+    margin: 5px auto;
+    padding: 10px;
+    background-color: rgb(115, 117, 248);
+    border: 1px solid rgb(54, 30, 100);
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+.forms_select {
+    padding: 10px;
+    border: 0;
+    border-radius: 10px;
+}
+
+
+.btn {
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-variant: small-caps;
+    color: white;
+    border: 2px solid rgb(255, 255, 255);
+    background-color: rgb(136, 138, 255);
+    border-radius: 10px;
+    padding: 10px;
+	font-family: oswald-variable;
+	font-variant: small-caps;
+	text-align: center;
+	transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    width: 150px;
+}
+.btn:hover {
+    border: 2px solid rgb(255, 255, 255);
+    background-color: rgb(66, 67, 179);
+}
+.apply_grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas: 'myArea myArea';
+    gap: 5px;
+}
+.forms_input_select {
+    width: 90%;
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-bottom: 5px;
+    gap: 10px;
+    border-radius: 10px;
+}
+.forms_input {
+    margin-bottom: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+.forms_checkbox {
+    width: 125px;
+    border: 2px solid rgb(255, 255, 255);
+    background-color: rgb(66, 67, 179);
+    border-radius: 10px;
+    padding: 20px;
+}
+.forms_input_checkbox {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+}
+.forms_name_input {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+.formss {
+    padding: 10px;
+    background-color: rgb(115, 117, 248);
+    border: 1px solid rgb(54, 30, 100);
+    border-radius: 10px;
+}
