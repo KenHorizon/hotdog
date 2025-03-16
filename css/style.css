@@ -100,6 +100,14 @@ td:first-child, th:first-child {
     flex-direction: column;
 }
 
+.table_contents {
+    width: 50%;
+    display: flex;
+    margin: 5px auto;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
 .forms_select {
     padding: 10px;
     border: 0;

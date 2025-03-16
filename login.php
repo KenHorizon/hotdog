@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$password = filter_input(INPUT_POST, "login_password", FILTER_SANITIZE_SPECIAL_CHARS);
 		$do_a_login = database::query("SELECT * FROM accounts WHERE username = '$username' AND password = '$password'");
 		// if ever user accidentally login without or wrong info
-		// it will immediately call this section to refresh page and remove any value data
+		// it will immediately set a warning
 		if (empty($username)) { 
 			$notice = "Please Insert Username!";
 		} elseif (empty($password)) {
@@ -22,10 +22,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			if (!$user->isEmpty()) {
 				$user->register = $username;
 				if (!$user->isEmpty()) {
+					// check if username and password from database are correct
 					if ($user->account()['username'] === $username && $user->account()['password'] === $password) {
 						$_SESSION['account_id'] = $user->account()['id']; // Register user using Unique ID to server, even the page is refresh wont lose until it logout or timeout
 						$_SESSION['account_username'] = $user->account()['username']; // Register user using Username to server, even the page is refresh wont lose until it logout or timeout
-						header("Location: home.php");
+						header("Location: home.php"); 
+						// Redirect after user to home
 					} else {
 						$notice = "Incorrect Email/Password!";
 					}

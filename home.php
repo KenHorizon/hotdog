@@ -3,7 +3,7 @@ use classes\{database};
 
 include("heads.php");
 
-session_start();
+session_start(); // Start session
 // If any accidentally click previous arrow on tab while clicked on logout they will
 // immediately go to homepage to login again
 if ($_SESSION["account_id"] === null) {
@@ -36,7 +36,7 @@ include("html_header.php");
 		<div class="ctn text">
 			<p> Username: <?php echo $account_name?> </p>
 		</div>
-		<div class="ctn text">
+		<div class="text">
 			<table class="table_contents">
 				<tr>
 					<th>Username</th>
@@ -44,6 +44,9 @@ include("html_header.php");
 					<th>First Name</th>
 					<th>Middle Name</th>
 					<th>Gender</th>
+					<th>Province</th>
+					<th>Languages</th>
+					<th>Birthday</th>
 				</tr>
 				<?php
 					$id;
@@ -53,6 +56,7 @@ include("html_header.php");
 					$middlename;
 					$gender;
 					if (database::is_connected()) {
+						// Display all registered account in table form
 						$account = database::query("SELECT * FROM accounts WHERE id");
 						if (mysqli_num_rows($account) > 0) {
 							while ($row = database::fetch($account)) {
@@ -62,16 +66,25 @@ include("html_header.php");
 								$firstname = $row['firstname'];
 								$middlename = $row['middlename'];
 								$gender = $row['gender'];
+								$province = $row['province'];
+								$languages = $row['languages'];
+								$birthday = $row['birthday'];
 								echo "<tr>";
 								echo "<td> ".$username." </td>";
 								echo "<td> 	".$surname." </td>";
 								echo "<td> ".$firstname." </td>";
 								echo "<td> ".$middlename." </td>";
 								echo "<td> ".$gender." </td>";
+								echo "<td> ".$province." </td>";
+								echo "<td> ".$languages." </td>";
+								echo "<td> ".$birthday." </td>";
 								echo "</tr>";
 							}
 						} else {
 							echo "<tr>";
+							echo "<td> - </td>";
+							echo "<td> - </td>";
+							echo "<td> - </td>";
 							echo "<td> - </td>";
 							echo "<td> - </td>";
 							echo "<td> - </td>";

@@ -1,10 +1,6 @@
 <?php
 use classes\{database};
-
 include("heads.php");
-
-$notice = "";
-
 ?>
 
 <!DOCTYPE html>
