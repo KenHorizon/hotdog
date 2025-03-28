@@ -101,7 +101,7 @@ include("html_header.php");
 		</div>
 
 		<div class="ctn">
-			<a href="index.php"><div class="btn">Logout</div></a>
+			<a href="login.php"><div class="btn">Logout</div></a>
 		</div>
 	</div>
 </body>
